@@ -1,0 +1,30 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+
+h1,h2 {
+    text-align: center;
+}
+
+#calendar{
+    width: 30%;
+    border: 1px solid;
+}
+#calendar th {
+    background-color: gray;
+}
+#calendar td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #cccccc;
+}
+
+#calendar td:first-child,
+#calendar th:first-child 
+{
+    color: #ff0000;
+}
+
+
