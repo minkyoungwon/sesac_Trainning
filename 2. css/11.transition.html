@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <style>
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition-property: width, height;
+            transition-duration: 3s;
+            transition-timing-function: ease;
+        }
+
+
+        .square:hover {
+            width: 150px;
+            height: 150px;
+        }
+
+
+        .button {
+            color: black;
+            transition-property: color;
+            transition-duration: 1.0s;
+            transition-timing-function: ease;
+        }
+
+        .button:hover {
+            color: red;
+        }
+
+        .image {
+            width: 200px;
+            transition-property: transform;
+            transition-duration: 1.0s;
+            transition-timing-function: ease;
+        }
+
+        .image:hover {
+            transform: rotate(180deg);
+        }
+
+        .gradient {
+            background: linear-gradient(to right, #f00, #0f0);
+            transition-property: background;
+            transition-duration: 3.0s;
+            transition-timing-function: ease;
+        }
+
+        .gradient:hover {
+            background: linear-gradient(to right, #0f0, #f00);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="square"></div>
+    <br>
+    <button class="button">Hover me</button>
+    <br>
+    <img class="image" src="../나는 돌이다.jpg" alt ="나는 돌">
+    <br>
+    <div class="gradient">Hover  me for gradient effect</div>
+</body>
+</html>
