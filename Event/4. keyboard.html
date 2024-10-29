@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="글짜를 입력하세요">
+    <div id="displayKey"></div>
+    <script>
+    //     document.addEventListener("keydown",function (event) {
+    //         console.log("키보드 눌린것" + event.key) ;
+    // });
+        document.addEventListener("keydown",(e) => {
+            console.log(`키보드 눌린것 + ${e.key}`);
+            const displayElement = document.getElementById('displayKey');
+            displayElement.textContent = e.key; // 눌린 키 를 화면에 표시
+    });
+    </script>
+</body>
+</html>

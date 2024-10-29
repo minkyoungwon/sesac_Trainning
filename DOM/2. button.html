@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+
+<style>
+    p {
+        color: red;
+    }
+</style>
+    <script>
+        function changeColor() {
+        // 강사님이 하신거 
+        const mytext = document.getElementById("mytext");
+        // html dom 요소만 가져옴.. 여기에 적용된 css는 가져오지 못함
+        // inline 속성만가져올수 있음
+        const currenColor = mytext.style.color; // 현재 색상 가져오기
+        // html + css 가 적용된 색상값을 가져오고 싶으면
+        const currenColor = window.getComputedStyle(mytext) // 랜더링
+        console.log("Computed:" + currenColor2)
+
+
+        // 컴퓨터가 알고 있는 red 와 우리가 알고있는 rgb(255,0,0) 은 다르기떔에
+        // 문제가 있었다
+        if (currenColor == "rgb(255, 0, 0)") {
+            mytext.style.color = 'blue';
+            console.log("파랑색")
+        } else {
+            mytext.style.color = 'red';
+            console.log("빨강색")
+        }
+    }
+
+    </script>
+</head>
+<body>
+    <p id ="mytext"> 이 텍스트의 글자를 변경해보시오 </p>
+    <button onclick="changeColor()"> 텍스트 글자색 노랑색으로 바꾸기 </button>
+
+</body>
+</html>
+
+<!-- // 내가 한것
+//            const mytext = document.getElementById("mytext");          
+//            현재 텍스트 색상이 빨간색이면 파란색으로, 그렇지 않으면 빨간색으로 변경
+//             if (mytext.style.color === "red") {
+//                mytext.style.color = "blue";
+//                mytext.style.backgroundColor = "green";
+//            } else {5
+//                mytext.style.color = "red";
+//                mytext.style.backgroundColor = "yellow";
+//            }
+         -->

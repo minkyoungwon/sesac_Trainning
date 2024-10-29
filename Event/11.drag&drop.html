@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+
+    <style>
+        #dragItem {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            cursor: pointer;
+        }
+
+        #dropZone {
+            width: 200px;
+            height: 200px;
+            margin-top: 50px;
+            border: 2px;
+            background-color: aliceblue;
+        }
+        </style>
+</head>
+<body>
+
+    <div id="dragItem" draggable="true">Drag Me</div>
+    <div id="dropZone">Drop Me</div>
+
+    <script>
+        const dragItem =document.getElementById("dragItem");
+        const dropZone = document.getElementById("dropZone");
+
+        dragItem.addEventListener("dragstart", () => {
+            console.log("드래그 사용중");
+        });
+
+        dropZone.addEventListener("drag", (event) => {
+            event.preventDefault(); // 웹 브라우저 본연의 기능 비활성화 (주로 파일/url 주소)
+            console.log("이 개체 위에 무언가 올라옴");
+        });
+
+        dropZone.addEventListener('drop',(event) => {
+            event.preventDefault();
+            console.log('드롭 발생')
+            // Dom 트리구조상, 멀티 parent를 가지수 없음 그래서 appendChild 화면
+            dropZone.appendChild(dragItem);
+        });
+
+
+
+    </script>
+</body>
+</html>

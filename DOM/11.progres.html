@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+<style>
+    div{
+        background-color: brown;
+    }
+    
+    #prograsbar {
+        width: 100%;
+        background-color: #ededed;
+    }
+    #progress {
+        width: 0%;
+        height: 30px;
+        background-color: aquamarine;
+    }
+
+
+</style>
+
+</head>
+<body>
+    <h1> 프로그래스바를 만들어보기</h1>
+    <input id ="timeInput" type="number" placeholder="초입력" min="1">
+    <button id ="startProgress"> 시작 </button> 
+    <button id ="resetProgress"> 초기화 </button>
+    <div id="prograsbar">
+        <div id="progress"></div>
+    </div>
+
+    <script> 
+    document.addEventListener("DOMContentLoaded",function() {
+        const startButton = document.getElementById("startButton");
+        const resetButton = document.getElementById("resetButton");
+        const prograsBar = document.getElementById("progres");
+        const timeInput = document.getElementById("timeInput");
+
+        let interva; // 타이머 인터벌을 저장할 변수
+        let duration; // 현재 진행 시점을 저장할 변수
+
+        function startProgress() {
+            console.log("시작");
+
+            let timePassed = 0;
+            let duration = parseInt(timeInput.value); 
+            prograsBar.style.width = "0%" // 초기에 0으로 시작해서 매초마다 이걸 증가
+
+            interval = setInterval(function() {
+                if (timePassed >= duration) { // 지정된 시간이 초과
+                    clearInterval(interval); //동작시켜둔 타이머를 중지
+                    }
+
+            }, 1000); //매 1초 (1000ms) 마다 이 안에 함수를 반복 실행한다
+
+        }
+        function resetProgress() {
+            console.log("리셋")
+        }
+    })
+
+    startButton.addEventListener("click", startProgress); //시작 버튼 클릭시 함수 호출하기
+    resetButton.addEventListener("click", resetProgress);
+    </script>
+</body>
+</html>
+
+
+<!-- 로딩 버튼 
+애니 메이션
+0%
+50%
+100% 
+div에 색깔을 넣어보자 
+
+-->

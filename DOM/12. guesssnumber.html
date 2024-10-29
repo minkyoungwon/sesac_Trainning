@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 숫자 맞추기 게임 (1~100)</h1>
+    <input id="guessNumber" type="number" placeholder="숫자를 입력하세요">
+    <!-- <div id="randomNumber"> </div> -->
+    <p id="result"></p>
+    <div id = "updownText"> up,down,guess 여부</div>
+    <button onclick="checkGuess()"> guess</button>
+    <br>
+    <br>
+    <h2 id="logGuess"> 나의 추측 스토리</h2>
+
+    <script>
+const randomNumber = Math.floor(Math.random() * 100) +1;
+let guessHistory = [] // 추측 기록 저장
+
+
+// 랜덤 숫자를 표시
+// document.getElementById('randomNumber').textContent = `랜덤 숫자: ${randomNumber}`;
+//  버튼을 누르면 randomnumber 부터 나오게 해보자 
+
+function checkGuess() {
+    const guessNumber = document.getElementById("guessNumber").value
+    const resultText = document.getElementById("result")
+    const updownText = document.getElementById("updownText")
+
+    guessHistory.push(guessNumber);
+
+    if (guessNumber < randomNumber) {
+        resultText.textContent = "결과 값이 너무 낮아요"
+        updownText.textContent = "up 해주세요"
+    } else if (guessNumber > randomNumber) {
+        resultText.textContent = "결과 값이 너무 높아요"
+        updownText.textContent = "down 해주세요"
+    } else {
+        resultText.textContent = " 정닶"
+        updownText.textContent = "current"
+}
+
+// 추측 기록 저장 및 로그 출력
+logGuess(guessNumber);
+
+}
+
+function logGuess(guessNumber) {
+    const logArea = document.getElementById("logGuess");
+    const story = document.createElement("p"); //뭘 추가해야할까 ?
+    story.textContent =`추측한 숫자 : ${guessNumber}`;
+    logArea.appendChild(story); // 나의 추측 스토리에 기록 추가
+}
+
+
+// document.getElementById("guessNumber").addEventListener("click",checkGuess)
+// document.getElementById("button").addEventListener("click",checkGuess)
+
+
+<input id='name' onkeyup='printName()'/>
+
+<div id='result'>
+    </div>
+
+function printName()  {
+  const name = document.getElementById('name').value;
+  document.getElementById("result").innerText = name;
+}
+
+
+
+
+// 입력한 값의 로그 남기기
+
+
+
+// 버튼 연결
+// guessNumber 입력밧 유효성 검사
+// 결과 화면에 표시하기
+
+// 업다운 힌트 제공
+// 추측 기록 저장 log
+
+
+// document.addEventListener("DOMContentLoaded",function() {}) //이게 더좋은코드임
+// function checkGuess() {
+//     const guessNumber = document.getElementById("guessNumber").value;
+//     const result = document.getElementById("result");
+
+//     console.log("랜덤" + randomNumber + ", 추측: " + guessNumber)
+    
+//     if (guessNumber < randomNumber) {
+//         console.log("too low")
+//         result.innerHTML = "<B> too low</B>";
+//     } else if (guessNumber > randomNumber) {
+//         console.log ("too high");
+//     } else {
+//         result.innerHTML = "<B> Correct</B>";
+//     }
+// }
+
+
+
+
+    // 1~100까지의 수 Math
+        // 미션 1
+        // 1. 랜덤 숫자 1~100까지 생성한다
+        // 2. guess 버튼을 통해 입력한 숫자와 내숫자가 맞는지 비교한다
+        // 2_1 입력한 숫자가 더크면 = 높다고 알려주고
+        // 2_2 입력한 숫자가 작으면 = 낮다고 알려주고
+        // 3_3 같으면 Correct 라고 알려주기
+
+        // 미션 2
+        // 3. 입력한 값들의 로그 남기기? 출력하기?
+
+        // 미션 3
+        // 4. 이걸 내가 풀어가는 사람 입장에서 최소화해서 푸는거임 
+        // 내가 푼 방법인 그 알고리즘이름 작성하기 (=알고리즘)
+
+        // 게산기 만들기
+    </script>
+
+</body>
+</html>

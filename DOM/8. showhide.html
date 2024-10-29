@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+
+    <style>
+        #hiddenDiv {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showhide()"> 토글 div </button>
+
+    <div id="hiddenDiv"> 이것은 숨겨진 div 영역입니다.</div>
+
+    <script>
+
+        function showhide() {
+            const divElement = document.getElementById("hiddenDiv");
+            const divElementStyle = window.getComputedStyle(divElement).display
+
+            console.log("초기화 스타일 값:" + divElementStyle)
+            if (divElement.style.display === "none") {
+                divElement.style.display === "block";
+
+            } else {
+            divElement.style.display === "none";
+        } }
+    </script>
+</body>
+</html>

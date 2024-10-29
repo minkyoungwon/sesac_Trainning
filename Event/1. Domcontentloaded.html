@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //document.addEventListener("DOMContentLoaded",함수명); //외부 함수 등록
+        //document.addEventListener("DOMContentLoaded",function() {}); // 함수빌트인
+        //document.addEventListener("DOMContentLoaded",() => {}); //함수 빌트인 // 위에 3개 다 똑같음
+        
+
+
+        document.addEventListener("DOMContentLoaded", ()=> {
+            // Dom이 로딩이 되었을떄다
+            // 그말인즉 css라던지 Image 라던지 이런 실제 모든 컨텐츠는 로딩 되었다고 보장할수 없다
+            console.log("Dom이 완전히 로딩 되었음")
+        });
+    </script>
+</body>
+</html>

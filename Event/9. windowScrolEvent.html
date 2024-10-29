@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #content {
+            height: 2000px;
+            background : linear-gradient (to bottom, #fc0 0%, #ff6600 100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        window.addEventListener("scroll",function() {
+            console.log("페이지 스크롤");
+
+            const scrolPostion = window.pageYOffset;
+            console.log(`현재 위치: ${scrolPostion}`);
+
+            const scrolPostion2 = document.documentElement.scrollTop;
+            console.log(`현재위치2 : ${scrolPostion2}`);
+
+
+            // 실무적 코딩은 / 앞에거나 뒤에거나 먼저 나오는거 
+            const scrolPostion3 = window.pageYOffset || document.documentElement.scrollTop;
+            console.log(`현재위치3 : ${scrolPostion3}`);
+        })
+
+
+    document.addEventListener('wheel',(event)=>{
+        console.log(`마우스 휠 움직임 : ${event.deltaY}`); // 모르겠으면 mdn 가서 찾아보셔요~~
+    })
+    </script>
+    
+</body>
+</html>

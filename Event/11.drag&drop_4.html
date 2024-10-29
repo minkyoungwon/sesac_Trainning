@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+
+    <style>
+
+.dragItem {
+
+}
+        #dragItem1, #dragItem2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            cursor: pointer;
+        }
+        #dragItem3, #dragItem4 {
+            width: 100px;
+            height: 100px;
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
+
+        #dropZone {
+            width: 200px;
+            height: 200px;
+            margin-top: 50px;
+            border: 2px;
+            background-color: aliceblue;
+        }
+        </style>
+</head>
+<body>
+
+    <div id="dragItem1" draggable="true">Drag Me1</div>
+    <div id="dragItem2" draggable="true">Drag Me2</div>
+    <div id="dragItem3" draggable="true">Drag Me3</div>
+    <div id="dragItem4" draggable="true">Drag Me4</div>
+    <div id="dropZone">Drop Me</div>
+
+    <script>
+        
+        const dropZone = document.getElementById("dropZone");
+        // const dragItem1 = document.getElementById("dragItem1");
+        // const dragItem2 = document.getElementById("dragItem2");
+        // const dragItem3 = document.getElementById("dragItem3");
+        // const dragItem4 = document.getElementById("dragItem4");
+
+        // dragItem1.addEventListener("dragstart", () => {
+        //     dragItem = dragItem1;
+        //     event.dataTransfer.setData("text",event.target.id);
+        // })
+        // dragItem2.addEventListener("dragstart", () => {
+        //     dragItem = dragItem2;
+        //     event.dataTransfer.setData("text",event.target.id);
+        // })
+        // dragItem3.addEventListener("dragstart", () => {
+        //     dragItem = dragItem3;
+        //     event.dataTransfer.setData("text",event.target.id);
+        // })
+        // dragItem4.addEventListener("dragstart", () => {
+        //     dragItem = dragItem4;
+        //     event.dataTransfer.setData("text",event.target.id);
+        // })
+
+
+        // 위에를 밑에줄로 수정한거임 
+        for (let i =1; i<= 4; i++) {
+        const dragItem = document.getElementById(`dragItem${i}`);
+        dragItem(`${i}`).addEventListener("dragstart", () => {
+        dragItem = dragItem(`${i}`);
+        event.dataTransfer.setData("text",event.target.id);
+})}
+
+
+const dragItems = document.querySelectorAll('.dragItem'); // 이 부분은 쫌
+
+dragItems.forEach(dragItem => { //에라이 깃험 보고 공부해라잇
+    dragItem.addEventListener("dragstart', ()=> {
+    }")
+})
+
+
+
+
+
+        dropZone.addEventListener("dragover", (event) => {
+            event.preventDefault();
+        })
+        
+        // 드롭이 발생시
+        dropZone.addEventListener("drop", (event) => {
+            event.preventDefault();
+            const data = event.dataTransfer.getData("text")
+            const dragItem = document.getElementById(data);
+            dropZone.appendChild(dragItem);
+        })
+
+        // // 드래그 시작 시 어떤 아이템을 드래그 중인지 저장
+        // dragItem1.addEventListener("dragstart", (event) => {
+        //     draggedItem = dragItem1;
+        //     console.log("드래그 사용중: Item 1"+ event.target.id);
+        //     event.dataTransfer.setData("target",event.target.id);
+        //     // 이벤트 객체(object) 안의 dataTrasfer 라는 객체 안에 내가 원하는 key,Value
+        //     // 로 저장가능 그래서 ("target", id) 이런 형태로 데이터를 저장중
+        // });
+        // dragItem2.addEventListener("dragstart", () => {
+        //     draggedItem = dragItem2;
+        //     console.log("드래그 사용중: Item 2");
+        // });
+
+        // // 드롭 가능한 영역 위에 있을 때
+        // dropZone.addEventListener("dragover", (event) => {
+        //     event.preventDefault(); // 웹 브라우저 기본 동작을 방지
+        //     console.log("이 개체 위에 무언가 올라옴");
+        // });
+
+        // // 드롭 발생 시
+        // dropZone.addEventListener('drop', (event) => {
+        //     event.preventDefault();
+        //     console.log('드롭 발생');
+        //     // 드래그된 아이템을 드롭존으로 이동
+        //     dropZone.appendChild(draggedItem);
+        // });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+const item1 = document.getElementById("item1");
+const item2 = document.getElementById("item2");
+const item3 = document.getElementById("item3");
+
+item1.addEventListener("click", () => {
+    console.log("Item 1 clicked");
+});
+item2.addEventListener("click", () => {
+    console.log("Item 2 clicked");
+});
+item3.addEventListener("click", () => {
+    console.log("Item 3 clicked");
+});
+
+
+
+for (let i = 1; i <= 4; i++) {
+    const dragItem = document.getElementById(`dragItem${i}`);
+    dragItem.addEventListener("dragstart", (event) => {
+        event.dataTransfer.setData("target", event.target.id);
+    });
+}
+
+
+</script>
+
+
+
+    
+</body>
+</html>
